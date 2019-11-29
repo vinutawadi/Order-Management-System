@@ -1,0 +1,83 @@
+{
+  "list_of_electronics": [
+    {
+      "id": 1,
+      "title": "Realme U1 ",
+      "material": "Realme U1 (Ambitious Black, 3GB RAM, 64GB Storage)",
+      "price": "8,999.00",
+      "image": "assets/img/61zbKINbwvL._SX679_.jpg",
+      "order_number": "#123423232",
+      "order_due_date": "12/02/20",
+      "customer_buyer_name": "Advin",
+      "customer_address": "XYZ plont no 123 newyork",
+      "customer_phone": "89798789797987",
+      "total_order": "8,999.00"
+    },
+    {
+      "id": 2,
+      "title": "Redmi 7A",
+      "material": "Redmi 7A (Matte Blue, 2GB RAM, 32GB Storage)",
+      "price": "5,799.00",
+      "image": "assets/img/71CyW7YCRaL._SL1500_ (1).jpg",
+      "order_number": "#98789789789",
+      "order_due_date": "13/01/20",
+      "customer_buyer_name": "Abbe",
+      "customer_address": "#23 djf kjkk",
+      "customer_phone": "9899898999999",
+      "total_order": "5,799.00"
+    },
+    {
+      "id": 3,
+      "title": "Panasonic Eluga Ray 800",
+      "material": "Panasonic Eluga Ray 800 (Gold, 4GB RAM, 64GB Storage)",
+      "price": "5,999.00",
+      "image": "assets/img/lcd_screen_for_panasonic_eluga_ray_800_replacement_display_by_maxbhi_com_20673.jpg",
+      "order_number": "#123545988",
+      "order_due_date": "1/02/20",
+      "customer_buyer_name": "Toyloe",
+      "customer_address": "#TYU okoko",
+      "customer_phone": "987987998",
+      "total_order": "5,999.00"
+    },
+    {
+      "id": 4,
+      "title": "OPPO K3",
+      "material": "OPPO K3(Jade Black, 6GB RAM, AMOLED Display, 64GB Storage, 3765mAH Battery)",
+      "price": "16,990.00",
+      "image": "assets/img/71ojquHpqKL._SL1500_.jpg",
+      "order_number": "#587976475",
+      "order_due_date": "1/03/20",
+      "customer_buyer_name": "helin",
+      "customer_address": "#abc aust",
+      "customer_phone": "",
+      "total_order": "16,990.00"
+    },
+    {
+      "id": 4,
+      "title": "Samsung Galaxy M30",
+      "material": "Samsung Galaxy M30 (Metallic Blue, 5000mAh Battery, Super AMOLED Display, 3GB RAM, 32GB Storage)",
+      "price": "9,999.00",
+      "image": "assets/img/Samsung-Galaxy-M30-Blue-425x425.jpg",
+      "order_number": "#987987988",
+      "order_due_date": "12/07/20",
+      "customer_buyer_name": "Fisole",
+      "customer_address": "#xyz 123455",
+      "customer_phone": "9898989898989",
+      "total_order": "9,999.00"
+    }
+  ],
+  "profile_details": [
+    {
+      "id": "1",
+      "customer_buyer_name": "Advinsfddsd",
+      "customer_address": "XYZ plont no 123 newyork",
+      "customer_phone": "89798789797987"
+    }
+  ],
+  "login_details": [
+    {
+      "login_name": "abc@123",
+      "password": "12345678"
+    }
+  ]
+}

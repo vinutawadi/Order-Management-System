@@ -1,0 +1,125 @@
+<div class="panel-header-sm">
+</div>
+<div class="main-content">
+  <h1 align="center" class="display-4 mb-5">My Cart</h1>
+  <a href="#" routerLink="/homePage" class="btn btn-lg btn-primary text-uppercase">Continue Shopping</a>
+
+  <div class="card">
+    <div class="card-body">
+      <ul class="list-group" *ngFor="let data of profiledetails">
+        <a class="removeClass" class="btn btn-primary text-uppercase" data-toggle="modal" data-target="#exampleModal1">Edit</a>
+        <li class="list-group-item">{{data?.customer_buyer_name}}</li>
+        <li class="list-group-item">{{data?.customer_phone}}</li>
+        <li class="list-group-item">{{data?.customer_address}}</li>
+      </ul>
+    </div>
+  </div>
+  <!--Cart Detail Table-->
+  <table class="table table-striped text-center">
+    <thead>
+      <tr>
+        <th scope="col">Photo</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Subtotal</th>
+        <th scope="col">Order Number</th>
+        <th scope="col">Order Due Date</th>
+        <th scope="col">Action</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let productInOrder of shoppingCartItems; let i = index">
+        <th class="align-middle" scope="row">
+          <a routerLink="/product/{{productInOrder.id}}"><img height="100px" src="{{productInOrder.image}}"
+              alt="{{productInOrder.title}}"></a>
+        </th>
+        <td class="align-middle"><a routerLink="/product-details/{{productInOrder.title}}">{{productInOrder.title}}</a>
+        </td>
+        <td class="align-middle">{{productInOrder.price}}</td>
+        <td class="align-middle">{{productInOrder.total_order}}</td>
+        <td class="align-middle">{{productInOrder.order_number}}</td>
+        <td class="align-middle">{{productInOrder.order_due_date}}</td>
+
+        <td class="align-middle">
+          <a class="removeClass" routerLink="/product-details/{{productInOrder.title}}">Edit</a>
+        </td>
+        <td class="align-middle">
+          <a class="removeClass" data-toggle="modal" data-target="#exampleModal"
+            (click)="remove(productInOrder, i)">Remove</a>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <div *ngIf="productInOrders?.length > 0; else empty">
+    <h5 style="display: inline;">Total: {{total | currency}}</h5>
+    <button (click)="checkout()" class="btn btn-warning float-right">Checkout</button>
+  </div>
+  <ng-template #empty>
+    <h4 class="text-muted text-center">Cart is empty. Go to get something! :)</h4>
+  </ng-template>
+</div>
+<!-- Modal delete-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Order</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are You sure You want to delete the product
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+          (click)="saveChanges('close')">Close</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="saveChanges('save')">Save
+          changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal close-->
+
+<!-- Modal Edit-->
+<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" *ngFor="let data of profiledetails">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit User Details</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" >
+        <form #form="ngForm">
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="customer_buyer_name"  [(ngModel)]="data.customer_buyer_name" placeholder="UserName">
+          </div>
+
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" name="customer_phone"  [(ngModel)]="data.customer_phone" placeholder="User Phone">
+
+          </div>
+          <div class="input-group mb-3">
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="customer_address"  [(ngModel)]="data.customer_address" rows="3"></textarea>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal"
+          (click)="saveChangesEdit('close')">Close</button>
+        <button type="submit" class="btn btn-primary" data-dismiss="modal" (click)="saveChangesEdit(data,profiledetails)">Save
+          changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Modal close-->
